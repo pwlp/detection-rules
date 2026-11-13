@@ -1,30 +1,42 @@
 # Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
-# or more contributor license agreements. Licensed under the Elastic License;
-# you may not use this file except in compliance with the Elastic License.
+# or more contributor license agreements. Licensed under the Elastic License
+# 2.0; you may not use this file except in compliance with the Elastic License
+# 2.0.
 
 """Detection rules."""
-from . import devtools
-from . import docs
-from . import eswrap
-from . import kbwrap
-from . import main
-from . import mappings
-from . import misc
-from . import rule_formatter
-from . import rule_loader
-from . import schemas
-from . import utils
+
+from . import (
+    custom_rules,
+    custom_schemas,
+    devtools,
+    docs,
+    eswrap,
+    ghwrap,
+    kbwrap,
+    main,
+    misc,
+    ml,
+    navigator,
+    rule_formatter,
+    rule_loader,
+    schemas,
+    utils,
+)
 
 __all__ = (
-    'devtools',
-    'docs',
-    'eswrap',
-    'kbwrap',
-    'mappings',
+    "custom_rules",
+    "custom_schemas",
+    "devtools",
+    "docs",
+    "eswrap",
+    "ghwrap",
+    "kbwrap",
     "main",
-    'misc',
-    'rule_formatter',
-    'rule_loader',
-    'schemas',
-    'utils',
+    "misc",
+    "ml",
+    "navigator",
+    "rule_formatter",
+    "rule_loader",
+    "schemas",
+    "utils",
 )

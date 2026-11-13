@@ -1,16 +1,19 @@
 # Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
-# or more contributor license agreements. Licensed under the Elastic License;
-# you may not use this file except in compliance with the Elastic License.
+# or more contributor license agreements. Licensed under the Elastic License
+# 2.0; you may not use this file except in compliance with the Elastic License
+# 2.0.
 
-# coding=utf-8
 """Shell for detection-rules."""
-import os
+
+from pathlib import Path
+
 import click
+
 from .main import root
 
-CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-CLI_DIR = os.path.dirname(CURR_DIR)
-ROOT_DIR = os.path.dirname(CLI_DIR)
+CURR_DIR = Path(__file__).resolve().parent
+CLI_DIR = CURR_DIR.parent
+ROOT_DIR = CLI_DIR.parent
 
 BANNER = r"""
 █▀▀▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄   ▄      █▀▀▄ ▄  ▄ ▄   ▄▄▄ ▄▄▄
@@ -19,7 +22,7 @@ BANNER = r"""
 """
 
 
-def main():
+def main() -> None:
     """CLI entry point."""
     click.echo(BANNER)
     root(prog_name="detection_rules")
